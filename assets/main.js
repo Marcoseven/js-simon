@@ -1,5 +1,6 @@
 /* 
-Descrizione:
+Traccia esercizio.
+
 Un alert() espone 5 numeri generati casualmente.
 Da li parte un timer di 30 secondi.
 Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
@@ -19,39 +20,33 @@ STRUMENTI
 - if;
 */
 
-// DOM
-const result = document.getElementById("result");
+function generateRandomNumbers(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-// array
 let numbersRandom = [];
 
 // function e ciclo for
-myFunctions();
-function myFunctions() {
-	for (let index = 0; index < 5; index++) {
-		const getNumbers = Math.round(Math.random() * 100) + 1;
+while (numbersRandom.length < 5) {
+	const getNumbers = generateRandomNumbers(1, 100);
+	if (!numbersRandom.includes(getNumbers)) {
 		numbersRandom.push(getNumbers);
-		console.log(getNumbers);
 	}
 }
-
-// alert
 alert(numbersRandom);
 
 // setTimeout e function
 setTimeout(popUp, 3000);
-popUp();
 function popUp() {
-	return parseInt(
-		prompt("Prova ad inserire i cinque numeri casuali comparsi in precedenza")
-	);
-}
-
-// condizionale if
-if (popUp == numbersRandom) {
-	console.log("Hai indovinato!");
-	result.innerHTML = "Hai indovinato!";
-} else if (popUp != numbersRandom) {
-	console.log("Mi dispiace, non hai indovinato");
-	result.innerHTML = "Mi dispiace, non hai indovinato";
+	const numbers = [];
+	for (let i = 0; i < 5; i++) {
+		const number = parseInt(
+			prompt("Prova ad inserire i cinque numeri casuali comparsi in precedenza")
+		);
+		console.log(numbers);
+		if (numbersRandom.includes.numbers) {
+			numbers.push(number);
+		}
+	}
+	alert("Hai indovinato" + numbers.leght + " numeri:" + numbers.toString());
 }
